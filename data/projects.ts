@@ -92,7 +92,7 @@ export const projects: Project[] = [
     category: 'Mini-Projects · Curated Chaos', 
     desc: 'A live peek into my digital playground. Micro-interactions, UI experiments, and unfinished ideas.', 
     status: 'Always active',
-    image: '/projects/playground.png',
+    image: '/figma.png',
     tier: 'lab',
     figmaLink: 'https://figma.com/file/example-playground'
   }

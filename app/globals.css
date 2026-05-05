@@ -451,10 +451,6 @@ section {
 
 /* Individual work row */
 .work-row {
-  display: grid;
-  grid-template-columns: 48px 1fr 240px 32px;
-  gap: 32px;
-  align-items: start;
   padding: 40px 0;
   border-bottom: 1px solid var(--border);
   cursor: pointer;
@@ -2451,12 +2447,12 @@ nav {
     width: 90%;
   }
 
-  .work-row {
+  .work-row__link {
     grid-template-columns: 36px 1fr 32px;
     gap: 20px;
   }
 
-  .work-row__meta {
+  .work-row__link .work-row__meta {
     display: none;
   }
 
@@ -2512,16 +2508,19 @@ nav {
   }
 
   .work-row {
-    grid-template-columns: 1fr 24px;
-    gap: 12px;
     padding: 28px 0;
   }
 
-  .work-row__index {
+  .work-row__link {
+    grid-template-columns: 1fr 24px;
+    gap: 12px;
+  }
+
+  .work-row__link .work-row__index {
     display: none;
   }
 
-  .work-row__meta {
+  .work-row__link .work-row__meta {
     display: none;
   }
 

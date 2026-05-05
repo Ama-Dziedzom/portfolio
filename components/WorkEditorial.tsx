@@ -117,7 +117,7 @@ export default function WorkEditorial() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              href="https://figma.com"
+              href="https://www.figma.com/design/Jeck3YYRm9V67sZKxlTORk/Ama-s-playground?node-id=0-1&t=vmxcCo8K1abxScAH-1"
               target="_blank"
               rel="noopener noreferrer"
             >
