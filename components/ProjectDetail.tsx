@@ -86,17 +86,21 @@ export default function ProjectDetail({ project }: ProjectDetailProps) {
         <motion.div className="pd-context-col" {...fadeIn}>
           <h3 className="pd-section-label">Background</h3>
           <p>
-            {project.tier === 'lab' 
-              ? "A creative exploration focused on pushing the boundaries of typical interfaces. This project allowed me to experiment with new interaction models and visual styles."
-              : "A focused client project where the goal was to deliver high-fidelity designs that solve specific business needs while maintaining a premium aesthetic."}
+            {project.id === 'forex'
+              ? "A technical exploration into automated trading and real-time data processing. The focus was entirely on system logic and reliability, eschewing traditional UI in favor of a lean, command-based Telegram interface."
+              : project.tier === 'lab' 
+                ? "A creative exploration focused on pushing the boundaries of typical interfaces. This project allowed me to experiment with new interaction models and visual styles."
+                : "A focused client project where the goal was to deliver high-fidelity designs that solve specific business needs while maintaining a premium aesthetic."}
           </p>
         </motion.div>
         <motion.div className="pd-context-col" {...fadeIn}>
           <h3 className="pd-section-label">Outcome</h3>
           <p>
-            {project.tier === 'lab'
-              ? "Resulted in a set of reusable UI components and a refined understanding of spatial and technical constraints."
-              : "Delivered a complete design system and high-fidelity mockups ready for implementation."}
+            {project.id === 'forex'
+              ? "Developed a robust backend architecture capable of executing trades in milliseconds and broadcasting live signals to users with zero latency."
+              : project.tier === 'lab'
+                ? "Resulted in a set of reusable UI components and a refined understanding of spatial and technical constraints."
+                : "Delivered a complete design system and high-fidelity mockups ready for implementation."}
           </p>
         </motion.div>
       </div>

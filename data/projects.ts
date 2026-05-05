@@ -41,13 +41,14 @@ export const projects: Project[] = [
   },
   { 
     id: 'interior', 
-    name: 'Interior Studio.', 
+    name: 'Axis Living', 
     category: 'Web Design · Brand · Visual', 
     desc: 'Website for an interior design studio — visual craft translating into digital atmosphere.', 
     status: 'Side Project',
-    image: '/projects/interior.png',
+    image: '/axis-hero.png',
     tier: 'selected',
-    externalLink: 'https://interior-studio-example.com'
+    externalLink: 'https://axis-living.vercel.app/',
+    gallery: ['/3.png', '/4.png']
   },
   { 
     id: 'invoice', 
@@ -64,27 +65,27 @@ export const projects: Project[] = [
     category: 'Spatial Design · VisionOS · Concept', 
     desc: 'Shopping UI concept for Apple Vision Pro. What does commerce feel like when the interface is the room?', 
     status: 'Design concept',
-    image: '/projects/spatial.png',
+    image: '/Homepage.jpg',
     tier: 'lab'
   },
   { 
     id: 'forex', 
     name: 'Forex Bot.', 
-    category: 'Fintech · Trading UI · Dashboard', 
-    desc: 'Interface for an automated forex trading bot — real-time positions, trade history, analytics and risk controls.', 
+    category: 'Fintech · Telegram Bot · Automation', 
+    desc: 'An automated forex trading bot running entirely within Telegram. No UI design — purely logic-driven execution, real-time trade signals, and risk management through a command-based interface.', 
     status: 'Hobby Project',
-    image: '/projects/forex.png',
+    image: '/Hand and iPhone 16 Pro.png',
     tier: 'lab'
   },
   { 
     id: 'racing', 
-    name: 'Racing Game UI.', 
+    name: 'TurboCircuit', 
     category: 'Game Design · HUD · In Progress', 
     desc: 'HUD and interface for a racing game. The most extreme version of performance-first design.', 
     status: 'Design in progress',
-    image: '/projects/racing.png',
+    image: '/SPLASH SCREEN.png',
     tier: 'lab',
-    figmaLink: 'https://figma.com/file/example-racing-game'
+    figmaLink: 'https://www.figma.com/design/Jeck3YYRm9V67sZKxlTORk/Ama-s-playground?node-id=7-14170&t=ibrIIBMxORKAQOQ1-4'
   },
   { 
     id: 'playground', 
