@@ -2126,11 +2126,31 @@ nav {
 }
 
 .cs-visual-full {
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  height: 80vh;
-  margin-bottom: 160px;
-  border-radius: 0;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 160px;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border-radius: 32px;
+  border: 1px solid var(--border);
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+@media (max-width: 1280px) {
+  .cs-visual-full {
+    max-width: calc(100% - 48px);
+    border-radius: 24px;
+    margin-bottom: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cs-visual-full {
+    max-width: calc(100% - 32px);
+    border-radius: 16px;
+    margin-bottom: 80px;
+  }
 }
 
 .cs-visual-grid {

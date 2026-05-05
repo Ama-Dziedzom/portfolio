@@ -57,7 +57,7 @@ export default function AttendanceHubCaseStudy() {
         transition={{ duration: 1.2 }}
       >
         <Image 
-          src="/projects/attendance/hero.png" 
+          src="/1.png" 
           alt="Attendance Hub real-time dashboard showing biometric check-in data, employee list, and live attendance metrics"
           width={1920}
           height={1080}

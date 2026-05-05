@@ -27,7 +27,7 @@ export const projects: Project[] = [
     category: 'Full-Stack · Biometric · Live', 
     desc: 'Biometric attendance management system designed and built from scratch. Real-time dashboard, fingerprint and RFID registration.', 
     status: 'Live product',
-    image: '/projects/attendance.png',
+    image: '/1.png',
     tier: 'case-study'
   },
   { 
