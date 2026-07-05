@@ -70,7 +70,7 @@ export default function AboutModern() {
   ];
 
   return (
-    <section className="about-modern">
+    <section className="about-modern" id="about">
       {/* ── TOP SECTION: THE SIGNATURE ── */}
       <div className="about-signature-row">
         <motion.div 
@@ -99,7 +99,7 @@ export default function AboutModern() {
           transition={{ duration: 0.8 }}
         >
           <div className="photo-frame photo-frame--large">
-            <Image src="/IMG_3937.jpg" alt="Ama Dziedzom Barnor — Product Designer based in Accra, Ghana" className="about-image" width={400} height={500} style={{ objectFit: 'cover', width: '100%', height: '100%' }} />
+            <Image src="/IMG_3937.jpg" alt="Ama Dziedzom Barnor, Product Designer based in Accra, Ghana" className="about-image" width={400} height={500} style={{ objectFit: 'cover', width: '100%', height: '100%' }} />
           </div>
           <DoodleArrow />
         </motion.div>
@@ -134,10 +134,10 @@ export default function AboutModern() {
             </p>
             <div className="studio-hero-visual-premium">
               <div className="studio-main-frame">
-                <Image src="/about/art-ekko.png" alt="Ekko character illustration — digital art exploration" className="studio-img-main" width={400} height={400} style={{ objectFit: 'cover' }} />
+                <Image src="/about/art-ekko.png" alt="Ekko character illustration, digital art exploration" className="studio-img-main" width={400} height={400} style={{ objectFit: 'cover' }} />
               </div>
               <div className="studio-sub-frame">
-                <Image src="/about/art-miles-final.png" alt="Miles Morales illustration — Spider-Verse inspired digital art" className="studio-img-sub" width={200} height={200} style={{ objectFit: 'cover' }} />
+                <Image src="/about/art-miles-final.png" alt="Miles Morales illustration, Spider-Verse inspired digital art" className="studio-img-sub" width={200} height={200} style={{ objectFit: 'cover' }} />
               </div>
             </div>
             <a href="https://www.pinterest.com/dbarnor56/_created/" target="_blank" rel="noopener noreferrer" className="building-link">

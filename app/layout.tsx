@@ -5,7 +5,7 @@ import PortfolioShell from "@/components/PortfolioShell";
 
 export const metadata: Metadata = {
   title: {
-    default: "Ama Dziedzom Barnor — Product Designer & Builder",
+    default: "Ama Dziedzom Barnor, Product Designer & Builder",
     template: "%s | Ama Dziedzom Barnor",
   },
   description:

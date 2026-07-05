@@ -1,222 +1,201 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { motion } from "framer-motion";
-import { HugeiconsIcon } from "@hugeicons/react";
-import { ArrowLeft01Icon, ArrowRight01Icon } from "@hugeicons/core-free-icons";
-import { fadeIn } from "@/lib/animations";
+import {
+  Shell,
+  Hero,
+  HeroImage,
+  Overview,
+  Section,
+  TwoColText,
+  KeyDiscovery,
+  Figure,
+  Takeaways,
+  Placeholder,
+  NextProject,
+  Comparison,
+  Stepper,
+  Reveal,
+  TocSection,
+} from "@/components/deep-case-study";
+
+const SECTIONS: TocSection[] = [
+  { id: "overview", label: "Overview" },
+  { id: "context", label: "Context" },
+  { id: "problem", label: "The Problem" },
+  { id: "system", label: "The System" },
+  { id: "layout", label: "Layout" },
+  { id: "interactions", label: "Interactions" },
+  { id: "visual-design", label: "Visual Design" },
+  { id: "final-designs", label: "Final Designs" },
+  { id: "retrospective", label: "Retrospective" },
+];
 
 export default function LogItCaseStudy() {
   return (
-    <section className="case-study-modern">
-      <Link href="/work" className="back-link">
-        <span><HugeiconsIcon icon={ArrowLeft01Icon} size={20} strokeWidth={2} /></span> Back to work
-      </Link>
+    <Shell sections={SECTIONS}>
+      <Hero title={<>LogIt.</>} subtitle="Personal project · Currently building" />
 
-      {/* ── HERO SECTION ── */}
-      <div className="cs-hero-modern">
-        <motion.div className="cs-hero-tag" {...fadeIn}>
-          Case Study · Fintech · 2026
-        </motion.div>
-        <motion.h1 className="cs-hero-title" {...fadeIn} transition={{ delay: 0.1 }}>
-          Log<em>It.</em>
-        </motion.h1>
-        <motion.p className="cs-hero-hook" {...fadeIn} transition={{ delay: 0.2 }}>
-          <strong>The manual logging era is over.</strong><br />
-          Building a zero-friction financial system that turns SMS receipts into an honest, automated source of truth for the MoMo generation.
-        </motion.p>
+      <HeroImage
+        src="/projects/logit/hero.png"
+        alt="LogIt app hero screen showing the automated transaction dashboard with parsed MoMo SMS data"
+      />
 
-        <motion.div className="cs-meta-grid" {...fadeIn} transition={{ delay: 0.3 }}>
-          <div className="cs-meta-item">
-            <div className="cs-meta-label">Role</div>
-            <div className="cs-meta-value">Designer &amp; Builder</div>
-          </div>
-          <div className="cs-meta-item">
-            <div className="cs-meta-label">Focus</div>
-            <div className="cs-meta-value">Fintech · Automation</div>
-          </div>
-          <div className="cs-meta-item">
-            <div className="cs-meta-label">Market</div>
-            <div className="cs-meta-value">Accra, Ghana</div>
-          </div>
-          <div className="cs-meta-item">
-            <div className="cs-meta-label">Challenge</div>
-            <div className="cs-meta-value accent">System Limitations</div>
-          </div>
-        </motion.div>
-      </div>
+      <Overview
+        role={<><strong>Designer &amp; Builder</strong>: Product Design, iOS Automation, Full-Stack Build</>}
+        team={["Solo project"]}
+        timeline="Currently building"
+        paragraphs={[
+          <>The manual logging era is over. LogIt is a zero-friction financial system that turns MoMo SMS receipts into an honest, automated source of truth for the Ghanaian mobile money generation.</>,
+          <>In mature markets, fintech apps rely on Plaid or bank APIs to sync transactions. In Ghana, the &quot;bank&quot; is Mobile Money (MoMo). It&apos;s fast, ubiquitous, and completely closed off from third-party apps, so I designed and built the bridge myself.</>,
+        ]}
+      />
 
-      {/* ── IMMERSIVE VISUAL (Hero) ── */}
-      <motion.div 
-        className="cs-image-container cs-visual-full"
-        initial={{ opacity: 0, scale: 0.98 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 1.2 }}
-        style={{ position: 'relative', overflow: 'hidden' }}
-      >
-        <Image 
-          src="/projects/logit/hero.png" 
-          alt="LogIt app hero screen showing the automated transaction dashboard with parsed MoMo SMS data"
-          width={1920}
-          height={1080}
-          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-          priority
+      <Section id="context" label="Context">
+        <TwoColText heading="A market without APIs.">
+          {[
+            <>Every MoMo transaction triggers an SMS receipt. This is the only digital record millions of people have. But these messages are scattered, unformatted, and eventually buried in a crowded inbox.</>,
+          ]}
+        </TwoColText>
+        <TwoColText heading={<>&quot;Data Decay&quot; kills manual logging.</>}>
+          {[
+            <>Manual logging fails because if you miss just two days, your entire monthly balance is inaccurate. Most people simply give up, so the record millions of Ghanaians rely on for their own money stays fragmented by default.</>,
+          ]}
+        </TwoColText>
+      </Section>
+
+      <Section id="problem" label="The Problem" title="This wasn't going to be a typical logging app.">
+        <TwoColText heading="No API, no shortcuts (yet).">
+          {[
+            <>Without transaction APIs, the only reliable signal is the SMS receipt itself, and reading a user&apos;s messages from within a normal app is exactly what mobile OS sandboxing exists to prevent.</>,
+          ]}
+        </TwoColText>
+
+        <Comparison
+          options={[
+            {
+              label: "In-app message reading",
+              points: [
+                "Would need permissions Apple does not grant to normal apps.",
+                "Blocked entirely by iOS sandboxing, not just discouraged.",
+                "No path to App Store distribution even if it worked.",
+              ],
+            },
+            {
+              label: "iOS Shortcuts Automation",
+              accent: true,
+              points: [
+                "Runs at the OS level, outside the app sandbox restriction.",
+                "Triggers automatically on incoming SMS, no user action needed.",
+                "Feels like a native background listener once set up.",
+              ],
+            },
+          ]}
         />
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.3))', pointerEvents: 'none' }} />
-      </motion.div>
 
-      {/* ── SECTION 01: THE CONTEXT ── */}
-      <div className="cs-grid-editorial">
-        <motion.div className="cs-content-col" {...fadeIn}>
-          <div className="cs-section-label">01 / The Context</div>
-          <h2 className="cs-sub-title">A market without <em>APIs.</em></h2>
-          <div className="cs-text-box">
-            <p>In mature markets, fintech apps rely on Plaid or bank APIs to sync transactions. In Ghana, the &quot;bank&quot; is Mobile Money (MoMo). It&apos;s fast, ubiquitous, and completely closed off from third-party apps.</p>
-            <p>Every transaction triggers an SMS receipt. This is the only digital record millions of people have. But these messages are scattered, unformatted, and eventually buried.</p>
-            <p><strong>Manual logging fails because of &quot;Data Decay.&quot;</strong> If you miss just two days of logging, your entire monthly balance is inaccurate. Most people simply give up.</p>
-          </div>
-        </motion.div>
-        <motion.div className="cs-image-container cs-image-container--tall" {...fadeIn}>
-          <Image src="/projects/logit/problem.png" alt="Screenshot showing scattered, unorganized MoMo SMS receipts on a phone" width={600} height={700} style={{ objectFit: 'cover', width: '100%', height: '100%' }} />
-          <div className="cs-image-caption">The raw, unorganized reality of Ghanaian financial data.</div>
-        </motion.div>
-      </div>
+        <p className="dcs-placeholder">
+          [Placeholder] Room for a fuller constraints breakdown here, e.g. specific regex edge cases across MoMo message formats and offline handling, once documented in detail.
+        </p>
+      </Section>
 
-      {/* ── SECTION 02: THE LOGIC (The Diagram) ── */}
-      <div className="cs-system-logic-section">
-        <motion.div className="cs-content-col" {...fadeIn}>
-          <div className="cs-section-label">02 / The System</div>
-          <h2 className="cs-sub-title">Turning text into <em>intelligence.</em></h2>
-        </motion.div>
+      <Section id="system" label="The System" title="Turning text into intelligence.">
+        <TwoColText heading="Hacking the sandbox.">
+          {[
+            <>Apple&apos;s security model prevents apps from reading your messages. On Android, this project would be trivial. On iOS, it required a system-level rethink.</>,
+            <>I utilized <strong>iOS Shortcuts Automations</strong> to act as the bridge. When a message from a specific sender arrives, the Shortcut triggers, parses the text using Regex, and sends the payload to the LogIt app.</>,
+          ]}
+        </TwoColText>
 
-        <div className="cs-logic-viz">
-          <motion.div className="logic-node" {...fadeIn} transition={{ delay: 0.1 }}>
-            <div className="node-icon">SMS</div>
-            <div className="node-label">The Trigger</div>
-            <div className="node-desc">Transaction receipt arrives via native iOS message.</div>
-          </motion.div>
-          <div className="logic-connector" />
-          <motion.div className="logic-node logic-node--accent" {...fadeIn} transition={{ delay: 0.2 }}>
-            <div className="node-icon">Regex</div>
-            <div className="node-label">The Parser</div>
-            <div className="node-desc">iOS Shortcut extracts Amount, Type, and Fee.</div>
-          </motion.div>
-          <div className="logic-connector" />
-          <motion.div className="logic-node" {...fadeIn} transition={{ delay: 0.3 }}>
-            <div className="node-icon">UI</div>
-            <div className="node-label">The Dashboard</div>
-            <div className="node-desc">Structured data is logged and visualized instantly.</div>
-          </motion.div>
-        </div>
-      </div>
+        <Stepper steps={["SMS Received", "Shortcut Parses", "Dashboard Updates"]} activeIndex={1} />
 
-      {/* ── SECTION 03: THE WORKAROUND ── */}
-      <div className="cs-grid-editorial cs-grid-editorial--reverse">
-        <motion.div className="cs-content-col" {...fadeIn}>
-          <div className="cs-section-label">03 / The Workaround</div>
-          <h2 className="cs-sub-title">Hacking the <em>Sandboxes.</em></h2>
-          <div className="cs-text-box">
-            <p>Apple&apos;s security model prevents apps from reading your messages. On Android, this project would be trivial. On iOS, it required a system-level rethink.</p>
-            <p>I utilized <strong>iOS Shortcuts Automations</strong> to act as the bridge. When a message from a specific sender arrives, the Shortcut triggers, parses the text using Regex, and sends the payload to the LogIt app. It&apos;s a &quot;zero-touch&quot; experience that feels like a native background listener.</p>
-          </div>
-        </motion.div>
-        <motion.div className="cs-image-container cs-image-container--medium" {...fadeIn}>
-          <Image src="/projects/logit/logic.png" alt="System architecture diagram showing iOS Shortcuts automation pipeline from SMS to LogIt app" width={600} height={600} style={{ objectFit: 'cover', width: '100%', height: '100%' }} />
-          <div className="cs-image-caption">System architecture: Leveraging native automation hooks.</div>
-        </motion.div>
-      </div>
+        <KeyDiscovery>
+          By leveraging iOS Shortcuts Automations as a background trigger, a &quot;zero-touch&quot; experience became possible without ever needing message-reading permissions Apple would never grant.
+        </KeyDiscovery>
 
-      {/* ── VISUAL GRID ── */}
-      <div className="cs-visual-grid cs-visual-grid--staggered">
-        <motion.div className="cs-image-container cs-image-container--tall" {...fadeIn}>
-          <Image src="/projects/logit/dashboard.png" alt="LogIt dashboard screen showing transaction categories, spending trends, and balance overview" width={600} height={700} style={{ objectFit: 'cover', width: '100%', height: '100%' }} />
-          <div className="cs-image-caption">Dashboard: Designed to reduce &quot;Financial Anxiety.&quot;</div>
-        </motion.div>
-        <motion.div className="cs-image-container cs-image-container--medium" {...fadeIn}>
-          <Image src="/projects/logit/detail.png" alt="Transaction detail view showing MoMo fee breakdown and categorization" width={600} height={500} style={{ objectFit: 'cover', width: '100%', height: '100%' }} />
-          <div className="cs-image-caption">Transparency: Every MoMo fee is accounted for.</div>
-        </motion.div>
-      </div>
+        <Figure
+          number="1.0"
+          caption="System architecture: SMS trigger, iOS Shortcut parser, LogIt dashboard."
+          type="image"
+          src="/projects/logit/logic.png"
+          alt="System architecture diagram showing iOS Shortcuts automation pipeline from SMS to LogIt app"
+        />
+      </Section>
 
-      {/* ── PULLQUOTE ── */}
-      <motion.div className="cs-pullquote-editorial" {...fadeIn}>
-        &quot;In a market where fees are hidden and APIs are non-existent, honesty is a design feature.&quot;
-      </motion.div>
+      <Section id="layout" label="Layout">
+        <Placeholder>
+          Room to document the layout grid, breakpoints, and responsive rules used across the dashboard and detail screens once formalized.
+        </Placeholder>
+      </Section>
 
-      {/* ── SECTION 04: IA & CATEGORIZATION ── */}
-      <div className="cs-ia-section">
-        <motion.div className="cs-content-col" {...fadeIn}>
-          <div className="cs-section-label">04 / IA &amp; Categorization</div>
-          <h2 className="cs-sub-title">Mapping the <em>Transaction DNA.</em></h2>
-          <div className="cs-text-box" style={{ maxWidth: '800px' }}>
-            <p>I mapped 14 distinct transaction patterns—from merchant payments to airtime top-ups. Each pattern has a unique &quot;DNA&quot; within the SMS body. The parser handles these variations, ensuring that a &quot;Cash-out fee&quot; isn&apos;t confused with the &quot;Transfer amount.&quot;</p>
-          </div>
-        </motion.div>
-        
-        <motion.div className="cs-ia-table-wrap" {...fadeIn}>
-          <table className="cs-ia-table">
-            <thead>
-              <tr>
-                <th>Pattern Type</th>
-                <th>Regex Logic</th>
-                <th>UI Result</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Merchant Payment</td>
-                <td>{"Extract: 'Sent to [Name]'"}</td>
-                <td>Outflow (-)</td>
-              </tr>
-              <tr>
-                <td>MoMo Fee</td>
-                <td>{"Extract: 'Fee is GHS [X]'"}</td>
-                <td>Tax/Fee Category</td>
-              </tr>
-              <tr>
-                <td>Cash-In</td>
-                <td>{"Extract: 'Received from [Agent]'"}</td>
-                <td>Inflow (+)</td>
-              </tr>
-            </tbody>
-          </table>
-        </motion.div>
-      </div>
+      <Section id="interactions" label="Interactions">
+        <Placeholder>
+          Room to document specific micro-interactions (e.g. category re-assignment, fee breakdown reveal) with before/after comparisons, similar in spirit to the update-flow explorations in the reference case study.
+        </Placeholder>
+      </Section>
 
-      {/* ── SECTION 05: HONEST REFLECTION ── */}
-      <div className="cs-honest-bento">
-        <motion.div className="cs-honest-card cs-honest-card--dark" {...fadeIn}>
-          <div className="cs-section-label">The Tech Stack</div>
-          <ul className="cs-list-editorial">
-            <li><span>iOS Shortcuts</span><span>Trigger Hub</span></li>
-            <li><span>Swift / SwiftUI</span><span>Core App</span></li>
-            <li><span>Regex101</span><span>Logic Testing</span></li>
-            <li><span>JSON Payload</span><span>Data Bridge</span></li>
+      <Section id="visual-design" label="Visual Design" title="Mapping the transaction DNA.">
+        <TwoColText heading="14 patterns, one parser.">
+          {[
+            <>I mapped 14 distinct transaction patterns, from merchant payments to airtime top-ups. Each pattern has a unique &quot;DNA&quot; within the SMS body, so the parser can tell a &quot;Cash-out fee&quot; apart from a &quot;Transfer amount&quot; without confusing the two.</>,
+          ]}
+        </TwoColText>
+
+        <Reveal showLabel="Show pattern examples" hideLabel="Hide pattern examples">
+          <ul className="dcs-comparison__points">
+            <li><strong>Merchant Payment</strong>: extracts &quot;Sent to [Name]&quot; → logged as Outflow.</li>
+            <li><strong>MoMo Fee</strong>: extracts &quot;Fee is GHS [X]&quot; → logged under the Fee category.</li>
+            <li><strong>Cash-In</strong>: extracts &quot;Received from [Agent]&quot; → logged as Inflow.</li>
           </ul>
-        </motion.div>
-        <motion.div className="cs-honest-card" {...fadeIn}>
-          <div className="cs-section-label">The Senior Insight</div>
-          <div className="cs-text-box" style={{ marginTop: '32px' }}>
-            <p>This project taught me that user experience isn&apos;t just about the interface you build—it&apos;s about the technical hurdles you hide. By leveraging iOS Automations, I turned a system-level hurdle into a frictionless user benefit.</p>
-          </div>
-        </motion.div>
-      </div>
+        </Reveal>
 
-      {/* ── NEXT PROJECT FOOTER ── */}
-      <motion.div 
-        className="cs-footer-cta"
-        {...fadeIn}
-      >
-        <div className="cs-section-label">Next Case Study</div>
-        <Link href="/work/attendance" className="cs-footer-cta__link">
-          <h2 className="cs-sub-title">
-            Attendance Hub <HugeiconsIcon icon={ArrowRight01Icon} size={32} strokeWidth={2} />
-          </h2>
-        </Link>
-      </motion.div>
-    </section>
+        <p className="dcs-placeholder">
+          [Placeholder] Room for the design-system specifics: typography, color decisions for financial states (inflow/outflow/fee), and component documentation once written up.
+        </p>
+      </Section>
+
+      <Section id="final-designs" label="Final Designs">
+        <Figure
+          number="2.0"
+          caption={<>Dashboard: designed to reduce &quot;financial anxiety.&quot;</>}
+          type="image"
+          src="/projects/logit/dashboard.png"
+          alt="LogIt dashboard screen showing transaction categories, spending trends, and balance overview"
+        />
+        <Figure
+          number="2.1"
+          caption={<>Transaction detail: every MoMo fee accounted for.</>}
+          type="image"
+          src="/projects/logit/detail.png"
+          alt="Transaction detail view showing MoMo fee breakdown and categorization"
+        />
+      </Section>
+
+      <Section id="retrospective" label="Retrospective" title="Honesty as a design feature.">
+        <TwoColText heading="A frictionless benefit, hidden behind a system-level hurdle.">
+          {[
+            <>This project taught me that user experience isn&apos;t just about the interface you build. It&apos;s about the technical hurdles you hide. By leveraging iOS Automations, I turned a system-level hurdle into a frictionless user benefit.</>,
+          ]}
+        </TwoColText>
+
+        <Takeaways
+          items={[
+            {
+              title: "Constraints reveal the real interaction model.",
+              desc: "iOS's message-reading restriction forced a background-automation approach that ended up feeling more native than a bolted-on in-app inbox reader would have.",
+            },
+            {
+              title: "Trust is the product, not a feature of it.",
+              desc: "In a market where fees are hidden and APIs are non-existent, honesty about every deducted fee is what makes the dashboard worth checking daily.",
+            },
+          ]}
+        />
+
+        <p className="dcs-placeholder">
+          [Placeholder] Room for launch metrics (active users, parsing accuracy rate, retention) once LogIt ships publicly.
+        </p>
+      </Section>
+
+      <NextProject href="/work/attendance" name="Attendance Hub" />
+    </Shell>
   );
 }

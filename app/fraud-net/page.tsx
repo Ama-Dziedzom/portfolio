@@ -235,13 +235,13 @@ const CaseDetail = ({ caseData, onClose, onAction }: { caseData: any, onClose: (
   const [tab, setTab] = useState("overview");
   const tabs = ["overview", "timeline", "network", "actions"];
   const timeline = [
-    { time: "09:14:22", event: "Initial flag triggered — velocity anomaly", type: "flag" as const },
-    { time: "09:14:58", event: "CDR pulled — 48 calls in 6hr window", type: "data" as const },
-    { time: "09:15:10", event: "CRM KYC match — account age 3 days", type: "data" as const },
+    { time: "09:14:22", event: "Initial flag triggered: velocity anomaly", type: "flag" as const },
+    { time: "09:14:58", event: "CDR pulled: 48 calls in 6hr window", type: "data" as const },
+    { time: "09:15:10", event: "CRM KYC match: account age 3 days", type: "data" as const },
     { time: "09:15:45", event: "Mobile money transactions retrieved", type: "data" as const },
-    { time: "09:16:02", event: "ML model score: 97/100 — HIGH CONFIDENCE", type: "alert" as const },
+    { time: "09:16:02", event: "ML model score: 97/100, HIGH CONFIDENCE", type: "alert" as const },
     { time: "09:16:30", event: "Case assigned to K. Mensah", type: "assign" as const },
-    { time: "09:17:00", event: "Cell site analysis — 3 locations in 20min", type: "flag" as const },
+    { time: "09:17:00", event: "Cell site analysis: 3 locations in 20min", type: "flag" as const },
   ];
   const typeColors = { flag: COLORS.red, data: COLORS.blue, alert: COLORS.accent, assign: COLORS.purple };
 
@@ -311,7 +311,7 @@ const CaseDetail = ({ caseData, onClose, onAction }: { caseData: any, onClose: (
           {tab === "network" && (
             <div style={{ fontSize: 13, color: COLORS.textMuted, textAlign: "center", padding: "20px 0" }}>
               <NetworkGraph onSelectNode={() => {}} />
-              <p style={{ marginTop: 12 }}>Network graph for {caseData.msisdn} — 8 connected entities detected</p>
+              <p style={{ marginTop: 12 }}>Network graph for {caseData.msisdn}, 8 connected entities detected</p>
             </div>
           )}
 
@@ -325,7 +325,7 @@ const CaseDetail = ({ caseData, onClose, onAction }: { caseData: any, onClose: (
                   { label: "Block Number", desc: "Immediately suspend outgoing calls/data", color: COLORS.red, action: "block" },
                   { label: "Deactivate SIM", desc: "Full deactivation pending investigation", color: COLORS.red, action: "deactivate" },
                   { label: "Flag for Monitoring", desc: "Add to enhanced monitoring queue", color: COLORS.accent, action: "monitor" },
-                  { label: "Mark Resolved", desc: "Close case as resolved — no action needed", color: COLORS.green, action: "resolve" },
+                  { label: "Mark Resolved", desc: "Close case as resolved, no action needed", color: COLORS.green, action: "resolve" },
                   { label: "Escalate to Supervisor", desc: "Request supervisor review and sign-off", color: COLORS.purple, action: "escalate" },
                   { label: "Generate Report", desc: "Export full case report as PDF", color: COLORS.blue, action: "report" },
                 ].map(a => (
@@ -388,7 +388,7 @@ export default function FraudPlatformPage() {
   const showToast = (msg: string) => { setToast(msg); setTimeout(() => setToast(null), 3500); };
 
   const handleAction = (action: string, c: any) => {
-    const msgs: Record<string, string> = { block: `Number ${c.msisdn} blocked — pending supervisor approval`, deactivate: `SIM deactivation request sent for ${c.msisdn}`, monitor: `${c.msisdn} added to enhanced monitoring`, resolve: `Case ${c.id} marked as resolved`, escalate: `Case ${c.id} escalated to supervisor`, report: `Case report generated for ${c.id}` };
+    const msgs: Record<string, string> = { block: `Number ${c.msisdn} blocked, pending supervisor approval`, deactivate: `SIM deactivation request sent for ${c.msisdn}`, monitor: `${c.msisdn} added to enhanced monitoring`, resolve: `Case ${c.id} marked as resolved`, escalate: `Case ${c.id} escalated to supervisor`, report: `Case report generated for ${c.id}` };
     setSelectedCase(null);
     showToast(msgs[action]);
     if (action === "resolve") setCases(prev => prev.map(p => p.id === c.id ? { ...p, status: "Resolved" } : p));

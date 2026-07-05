@@ -1,4 +1,4 @@
-// Shared animation variants — single source of truth for Framer Motion configs
+// Shared animation variants: single source of truth for Framer Motion configs
 
 export const fadeIn = {
   initial: { opacity: 0, y: 30 },
