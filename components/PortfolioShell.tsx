@@ -11,16 +11,18 @@ export default function PortfolioShell({ children }: { children: React.ReactNode
   const pathname = usePathname();
   const isHome = pathname === "/";
   const isWorkIndex = pathname === "/work";
+  // Expanded case studies read as a standalone full page: no sidebar, no content offset.
+  const isCaseStudy = pathname.startsWith("/work/");
 
   return (
-    <main className="main-wrapper">
+    <main className={`main-wrapper${isCaseStudy ? " main-wrapper--full" : ""}`}>
       <ThemeToggle />
       <div className="fixed-clock">
         <AccraClock />
       </div>
 
       <div className="container">
-        <SidebarNav />
+        {!isCaseStudy && <SidebarNav />}
 
         {/* ── MAIN CONTENT ── */}
         <div id="main-content">

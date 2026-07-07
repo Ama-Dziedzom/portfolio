@@ -21,7 +21,7 @@ export default function Shell({ sections, children }: ShellProps) {
 
       <div className="dcs-layout">
         <div className="dcs-main">{children}</div>
-        <Toc sections={sections} />
+        {sections.length > 0 && <Toc sections={sections} />}
       </div>
     </section>
   );

@@ -4,6 +4,7 @@ export type { TocSection } from "./Toc";
 export { default as Hero } from "./Hero";
 export { default as HeroImage } from "./HeroImage";
 export { default as Overview } from "./Overview";
+export { default as Highlights } from "./Highlights";
 export { default as Section } from "./Section";
 export { default as TwoColText } from "./TwoColText";
 export { default as KeyDiscovery } from "./KeyDiscovery";

@@ -11,7 +11,7 @@ export default function ProjectPage() {
 
   if (!project) {
     return (
-      <section className="project-detail" style={{ textAlign: "center", padding: "200px 48px" }}>
+      <section className="dcs" style={{ textAlign: "center", padding: "200px 48px" }}>
         <h1>Project not found</h1>
         <p>The project you&apos;re looking for doesn&apos;t exist.</p>
       </section>

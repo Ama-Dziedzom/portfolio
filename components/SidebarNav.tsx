@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { getLenisInstance } from "@/lib/lenis";
 import useScrollSpy from "@/lib/useScrollSpy";
+import { PLAYGROUND_FIGMA_LINK } from "@/data/projects";
 
 interface NavItem {
   id: string;
@@ -113,6 +114,15 @@ export default function SidebarNav() {
             </Link>
           );
         })}
+
+        <a
+          href={PLAYGROUND_FIGMA_LINK}
+          className="sidebar-nav__link sidebar-nav__link--external"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Playground ↗
+        </a>
       </div>
     </nav>
   );

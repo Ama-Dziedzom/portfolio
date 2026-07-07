@@ -26,7 +26,8 @@ export default function Figure({ number, caption, type = "image", src, alt, widt
         )}
       </div>
       <figcaption className="dcs-figure__caption">
-        <span className="dcs-figure__number">{number}</span> {caption}
+        <span className="dcs-figure__number">{number}</span>
+        <span className="dcs-figure__text">{caption}</span>
         <span className="dcs-figure__tag">{type.toUpperCase()}</span>
       </figcaption>
     </motion.figure>

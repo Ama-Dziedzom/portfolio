@@ -6,6 +6,7 @@ import {
   Hero,
   HeroImage,
   Overview,
+  Highlights,
   Section,
   TwoColText,
   KeyDiscovery,
@@ -21,6 +22,7 @@ import {
 
 const SECTIONS: TocSection[] = [
   { id: "overview", label: "Overview" },
+  { id: "highlights", label: "Highlights" },
   { id: "context", label: "Context" },
   { id: "problem", label: "The Problem" },
   { id: "system", label: "The System" },
@@ -50,6 +52,18 @@ export default function LogItCaseStudy() {
           <>In mature markets, fintech apps rely on Plaid or bank APIs to sync transactions. In Ghana, the &quot;bank&quot; is Mobile Money (MoMo). It&apos;s fast, ubiquitous, and completely closed off from third-party apps, so I designed and built the bridge myself.</>,
         ]}
       />
+
+      <Highlights
+        statement={<>A zero-touch financial record for a market with no banking APIs, parsed straight from the SMS receipts everyone already has.</>}
+      >
+        <Figure
+          number="0.1"
+          caption="Automated dashboard, populated without a single manual entry."
+          type="image"
+          src="/projects/logit/dashboard.png"
+          alt="LogIt dashboard screen showing transaction categories, spending trends, and balance overview"
+        />
+      </Highlights>
 
       <Section id="context" label="Context">
         <TwoColText heading="A market without APIs.">
@@ -195,7 +209,7 @@ export default function LogItCaseStudy() {
         </p>
       </Section>
 
-      <NextProject href="/work/attendance" name="Attendance Hub" />
+      <NextProject href="/work/attendance" projectId="attendance" />
     </Shell>
   );
 }

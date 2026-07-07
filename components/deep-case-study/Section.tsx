@@ -14,14 +14,13 @@ export interface SectionProps {
 export default function Section({ id, label, title, children }: SectionProps) {
   return (
     <div className="dcs-section" id={id}>
-      <motion.h2 className="dcs-section__label" {...fadeIn}>
-        {label}
-      </motion.h2>
-      {title && (
-        <motion.h3 className="dcs-section__title" {...fadeIn}>
-          {title}
-        </motion.h3>
-      )}
+      <motion.div className="dcs-section__head" {...fadeIn}>
+        <h2 className="dcs-section__label">
+          <span className="dcs-section__dot" aria-hidden="true" />
+          {label}
+        </h2>
+        {title && <h3 className="dcs-section__title">{title}</h3>}
+      </motion.div>
       {children}
     </div>
   );

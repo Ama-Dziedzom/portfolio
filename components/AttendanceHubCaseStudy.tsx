@@ -6,6 +6,7 @@ import {
   Hero,
   HeroImage,
   Overview,
+  Highlights,
   Section,
   TwoColText,
   KeyDiscovery,
@@ -20,6 +21,7 @@ import {
 
 const SECTIONS: TocSection[] = [
   { id: "overview", label: "Overview" },
+  { id: "highlights", label: "Highlights" },
   { id: "context", label: "Context" },
   { id: "problem", label: "The Problem" },
   { id: "system", label: "The System" },
@@ -49,6 +51,18 @@ export default function AttendanceHubCaseStudy() {
           <>This project was my playground for learning how things actually work. I wasn&apos;t just moving pixels; I was figuring out how a fingerprint scanner talks to a database in real-time.</>,
         ]}
       />
+
+      <Highlights
+        statement={<>A designer&apos;s first full-stack build, now a live biometric system handling 400+ real check-ins.</>}
+      >
+        <Figure
+          number="0.1"
+          caption="Live dashboard with real-time check-in feed."
+          type="image"
+          src="/1.png"
+          alt="Attendance Hub real-time dashboard showing biometric check-in data, employee list, and live attendance metrics"
+        />
+      </Highlights>
 
       <Section id="context" label="Context">
         <TwoColText heading="More than just a dashboard.">
@@ -171,7 +185,7 @@ export default function AttendanceHubCaseStudy() {
         </p>
       </Section>
 
-      <NextProject href="/work/logit" name="LogIt" />
+      <NextProject href="/work/fraud" projectId="fraud" />
     </Shell>
   );
 }
