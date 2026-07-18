@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 interface Audience {
   id: string;
@@ -98,20 +98,19 @@ export default function Hero() {
         initial="hidden"
         animate="visible"
       >
-        {/* Headline + sub, swaps per audience tab */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeId}
-            className="hero-headline-group"
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -12 }}
-            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <h1 className="hero-headline">{active.headline}</h1>
-            <p className="hero-sub">{active.sub}</p>
-          </motion.div>
-        </AnimatePresence>
+        {/* Headline + sub, swaps per audience tab. Keyed remount instead of
+            AnimatePresence mode="wait", whose exit phase gets stuck and blocks
+            the swap under this framer-motion + React 19 combination. */}
+        <motion.div
+          key={activeId}
+          className="hero-headline-group"
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <h1 className="hero-headline">{active.headline}</h1>
+          <p className="hero-sub">{active.sub}</p>
+        </motion.div>
       </motion.div>
     </section>
   );

@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Project, getNextProject, getProjectHref } from "../data/projects";
+import { Project } from "../data/projects";
 import {
   Shell,
   Hero,
@@ -9,7 +9,6 @@ import {
   Overview,
   Highlights,
   Figure,
-  NextProject,
 } from "@/components/deep-case-study";
 import type { OverviewLink } from "@/components/deep-case-study/Overview";
 
@@ -19,11 +18,9 @@ interface ProjectDetailProps {
 
 /*
  * Light case study, modeled on the reference's Spotlight page:
- * Hero > Overview > Highlights media stack > Next project. No TOC, no deep sections.
+ * Hero > Overview > Highlights media stack. No TOC, no deep sections.
  */
 export default function ProjectDetail({ project }: ProjectDetailProps) {
-  const next = getNextProject(project.id);
-
   const links: OverviewLink[] = [
     ...(project.externalLink ? [{ label: "Visit live site", href: project.externalLink, external: true }] : []),
     ...(project.demoLink ? [{ label: "Try the interactive demo", href: project.demoLink }] : []),
@@ -60,8 +57,6 @@ export default function ProjectDetail({ project }: ProjectDetailProps) {
           ))}
         </Highlights>
       )}
-
-      <NextProject href={getProjectHref(next.id)} projectId={next.id} />
     </Shell>
   );
 }

@@ -185,10 +185,3 @@ export function getProjectHref(projectId: string): string {
   if (projectId === 'attendance') return '/work/attendance';
   return `/work/${projectId}`;
 }
-
-/* The project after this one in listing order, wrapping at the end */
-export function getNextProject(projectId: string): Project {
-  const ordered = getOrderedProjects();
-  const idx = ordered.findIndex((p) => p.id === projectId);
-  return ordered[(idx + 1) % ordered.length];
-}

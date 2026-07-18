@@ -13,7 +13,6 @@ import {
   Figure,
   Takeaways,
   Placeholder,
-  NextProject,
   Comparison,
   Stepper,
   TocSection,
@@ -184,8 +183,6 @@ export default function AttendanceHubCaseStudy() {
           [Placeholder] Room for live usage metrics (daily check-ins, uptime, user feedback) once available.
         </p>
       </Section>
-
-      <NextProject href="/work/fraud" projectId="fraud" />
     </Shell>
   );
 }

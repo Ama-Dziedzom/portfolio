@@ -4,7 +4,6 @@ import React from "react";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import ThemeToggle from "./ThemeToggle";
-import AccraClock from "./AccraClock";
 import SidebarNav from "./SidebarNav";
 
 export default function PortfolioShell({ children }: { children: React.ReactNode }) {
@@ -17,9 +16,6 @@ export default function PortfolioShell({ children }: { children: React.ReactNode
   return (
     <main className={`main-wrapper${isCaseStudy ? " main-wrapper--full" : ""}`}>
       <ThemeToggle />
-      <div className="fixed-clock">
-        <AccraClock />
-      </div>
 
       <div className="container">
         {!isCaseStudy && <SidebarNav />}
@@ -31,8 +27,8 @@ export default function PortfolioShell({ children }: { children: React.ReactNode
 
         {/* ── FOOTER ── */}
         {/* On the homepage, the Contact section already covers this content, so skip the duplicate footer CTA. */}
-        {/* Also skipped on the /work index page. */}
-        {!isHome && !isWorkIndex && (
+        {/* Also skipped on the /work index page and on expanded case studies. */}
+        {!isHome && !isWorkIndex && !isCaseStudy && (
           <motion.footer
             className="footer-modern"
             initial={{ opacity: 0 }}

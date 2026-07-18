@@ -13,7 +13,6 @@ import {
   Figure,
   Takeaways,
   Placeholder,
-  NextProject,
   Comparison,
   Stepper,
   Reveal,
@@ -208,8 +207,6 @@ export default function LogItCaseStudy() {
           [Placeholder] Room for launch metrics (active users, parsing accuracy rate, retention) once LogIt ships publicly.
         </p>
       </Section>
-
-      <NextProject href="/work/attendance" projectId="attendance" />
     </Shell>
   );
 }

@@ -11,7 +11,6 @@ export { default as KeyDiscovery } from "./KeyDiscovery";
 export { default as Figure } from "./Figure";
 export { default as Takeaways } from "./Takeaways";
 export { default as Placeholder } from "./Placeholder";
-export { default as NextProject } from "./NextProject";
 export { default as Comparison } from "./Comparison";
 export type { ComparisonOption } from "./Comparison";
 export { default as Stepper } from "./Stepper";

@@ -16,9 +16,6 @@ interface NavItem {
 const NAV_ITEMS: NavItem[] = [
   { id: "intro", label: "Intro" },
   { id: "work", label: "Work", pagePath: "/work" },
-  { id: "values", label: "Values" },
-  { id: "background", label: "Background" },
-  { id: "references", label: "References" },
   { id: "about", label: "About", pagePath: "/about" },
   { id: "contact", label: "Contact" },
 ];
@@ -115,6 +112,22 @@ export default function SidebarNav() {
           );
         })}
 
+        <a
+          href="https://www.linkedin.com/in/dziedzom-barnor/"
+          className="sidebar-nav__link sidebar-nav__link--external sidebar-nav__link--group-start"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn ↗
+        </a>
+        <a
+          href="https://docs.google.com/document/d/1TVymoEp4ftQgE4H6hRNXharSqauayIJ4jW84pcLYj1M/edit?tab=t.0"
+          className="sidebar-nav__link sidebar-nav__link--external"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Resume ↗
+        </a>
         <a
           href={PLAYGROUND_FIGMA_LINK}
           className="sidebar-nav__link sidebar-nav__link--external"
