@@ -57,7 +57,7 @@ export const projects: Project[] = [
     desc: 'High-stakes, data-heavy UX for analysts resolving telecom fraud cases. Case queue, severity scoring, and resolution.',
     status: 'Client Project',
     image: '/projects/fraud/overlay-activity.png',
-    tier: 'selected',
+    tier: 'case-study',
     background: 'Telecom fraud arrives in waves, not one case at a time. Around 150 cases flagged per day, each with its own risk signals and urgency. Before this redesign, analysts worked case-by-case with no severity ranking, so a low-risk duplicate charge could sit in the same queue as an active account takeover. The real problem wasn’t visibility, it was prioritization: which case to open first. I designed a triage system: auto-tagged intake, a severity model that surfaces the highest-risk cases first, and a structured resolution flow with case notes and an audit trail, plus keyboard shortcuts throughout, since analysts live in this screen for hours and every extra click is a delay.',
     outcome: 'Delivered a complete design system and high-fidelity mockups covering the case queue, severity scoring logic, and resolution workflow, ready for engineering handoff.',
     demoLink: '/fraud-net',

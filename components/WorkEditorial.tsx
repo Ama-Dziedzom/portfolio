@@ -13,7 +13,7 @@ export default function WorkEditorial() {
     <section className="work-editorial" id="work">
       <div className="work-editorial__header">
         <div className="work-editorial__eyebrow">Selected Work</div>
-        <h1 className="work-editorial__title">Seven problems. <em>One brain.</em></h1>
+        <h1 className="work-editorial__title">Real problems. <em>One brain.</em></h1>
         <p className="work-editorial__subtitle">Product narratives, built systems, and frontier explorations.</p>
       </div>
 
