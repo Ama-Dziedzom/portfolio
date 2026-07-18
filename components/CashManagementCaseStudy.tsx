@@ -70,7 +70,7 @@ export default function CashManagementCaseStudy() {
       <Section id="outcome" label="Outcome" title="Live, with real cash moving through it.">
         <TwoColText heading="From pilot to public launch.">
           {[
-            <>Launched with 5 enterprise clients, including MultiChoice and Mount Meru, running live cash operations across 10+ stations and 20+ roaming tellers.</>,
+            <>Launched with 5 enterprise clients running live cash operations across 10+ stations and 20+ roaming tellers.</>,
             <>The pilot recorded 1,000+ transactions, and instant credit cut collection-to-value turnaround by roughly 90%.</>,
           ]}
         </TwoColText>

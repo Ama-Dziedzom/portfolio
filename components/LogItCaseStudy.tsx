@@ -59,8 +59,10 @@ export default function LogItCaseStudy() {
           number="0.1"
           caption="Automated dashboard, populated without a single manual entry."
           type="image"
-          src="/projects/logit/dashboard.png"
-          alt="LogIt dashboard screen showing transaction categories, spending trends, and balance overview"
+          src="/projects/logit/dashboard-hand.png"
+          alt="LogIt analytics dashboard in hand, showing income, spend, weekly trends, and top spending categories"
+          width={6000}
+          height={4500}
         />
       </Highlights>
 
@@ -201,6 +203,15 @@ export default function LogItCaseStudy() {
             type="image"
             src="/projects/logit/transactions.png"
             alt="LogIt transactions list grouped by day, populated from parsed MoMo SMS receipts"
+            width={1560}
+            height={3376}
+          />
+          <Figure
+            number="2.4"
+            caption={<>Insights: income, spend, weekly trends, and top spending categories.</>}
+            type="image"
+            src="/projects/logit/analytics.png"
+            alt="LogIt analytics overview with income and spend cards, weekly spend trend chart, and top spending list"
             width={1560}
             height={3376}
           />
