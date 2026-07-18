@@ -38,8 +38,8 @@ export default function LogItCaseStudy() {
       <Hero title={<>LogIt.</>} subtitle="Personal project · Currently building" />
 
       <HeroImage
-        src="/projects/logit/hero.png"
-        alt="LogIt app hero screen showing the automated transaction dashboard with parsed MoMo SMS data"
+        src="/projects/logit-cover.png"
+        alt="LogIt cover artwork showing the app's automated MoMo transaction dashboard"
       />
 
       <Overview
@@ -167,20 +167,44 @@ export default function LogItCaseStudy() {
       </Section>
 
       <Section id="final-designs" label="Final Designs">
-        <Figure
-          number="2.0"
-          caption={<>Dashboard: designed to reduce &quot;financial anxiety.&quot;</>}
-          type="image"
-          src="/projects/logit/dashboard.png"
-          alt="LogIt dashboard screen showing transaction categories, spending trends, and balance overview"
-        />
-        <Figure
-          number="2.1"
-          caption={<>Transaction detail: every MoMo fee accounted for.</>}
-          type="image"
-          src="/projects/logit/detail.png"
-          alt="Transaction detail view showing MoMo fee breakdown and categorization"
-        />
+        <div className="dcs-figure-grid">
+          <Figure
+            number="2.0"
+            caption={<>My Wallets: Mobile Money, bank, and cash in one place.</>}
+            type="image"
+            src="/projects/logit/wallets.png"
+            alt="LogIt My Wallets screen listing Mobile Money, bank, and cash wallet balances"
+            width={1560}
+            height={3376}
+          />
+          <Figure
+            number="2.1"
+            caption={<>Wallet setup: provider, opening balance, income source.</>}
+            type="image"
+            src="/projects/logit/wallet-add.png"
+            alt="LogIt add-wallet flow with provider selection, initial balance, and regular income toggle"
+            width={1560}
+            height={3376}
+          />
+          <Figure
+            number="2.2"
+            caption={<>Wallet detail: balance, inflow and outflow, every fee visible.</>}
+            type="image"
+            src="/projects/logit/wallet-details.png"
+            alt="LogIt MTN wallet detail screen with total balance, inflow, outflow, and categorized transactions"
+            width={1560}
+            height={3376}
+          />
+          <Figure
+            number="2.3"
+            caption={<>Transactions: every parsed SMS receipt, logged automatically.</>}
+            type="image"
+            src="/projects/logit/transactions.png"
+            alt="LogIt transactions list grouped by day, populated from parsed MoMo SMS receipts"
+            width={1560}
+            height={3376}
+          />
+        </div>
       </Section>
 
       <Section id="retrospective" label="Retrospective" title="Honesty as a design feature.">

@@ -23,7 +23,7 @@ export default function WorkCard({ project, href, external = false }: WorkCardPr
     <div className="work-card-outline">
       <Link
         href={href}
-        className="work-card"
+        className={`work-card${project.image ? "" : " work-card--no-thumb"}`}
         {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
       >
         <div className="work-card__top">

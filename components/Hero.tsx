@@ -20,7 +20,7 @@ const AUDIENCES: Audience[] = [
       <>
         Product designer &amp; builder in Accra, Ghana.
         <br />
-        Currently at a creative agency. Building my own things after hours.
+        Senior Product Designer at Interactive Digital. Building my own things after hours.
       </>
     ),
   },
@@ -28,7 +28,7 @@ const AUDIENCES: Audience[] = [
     id: "recruiters",
     label: "Recruiters",
     headline: <>A product designer<br />who <em>ships.</em></>,
-    sub: <>Product designer &amp; builder based in Accra, Ghana, currently at a creative agency. Case studies below show the full process, not just the polish.</>,
+    sub: <>Senior Product Designer at Interactive Digital in Accra, previously Head of Product at Grey Parrot IO. Case studies below show the full process, not just the polish.</>,
   },
   {
     id: "design-directors",
@@ -40,7 +40,7 @@ const AUDIENCES: Audience[] = [
     id: "product-designers",
     label: "Product Designers",
     headline: <>Design and code,<br />same <em>brain.</em></>,
-    sub: <>I prototype in Figma and ship in React. Explore the process behind LogIt, Attendance Hub, and more below.</>,
+    sub: <>I prototype in Figma and ship in React. Explore the process behind LogIt, Fraud Portal, and more below.</>,
   },
   {
     id: "product-managers",
@@ -57,7 +57,7 @@ const AUDIENCES: Audience[] = [
 ];
 
 export default function Hero() {
-  const [activeId, setActiveId] = useState(AUDIENCES[0].id);
+  const [activeId, setActiveId] = useState("product-managers");
   const active = AUDIENCES.find((a) => a.id === activeId) ?? AUDIENCES[0];
 
   const containerVariants = {

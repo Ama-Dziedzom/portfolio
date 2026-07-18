@@ -2,6 +2,9 @@ export interface CaseMedia {
   src: string;
   caption: string;
   type?: 'image' | 'video loop';
+  /* Intrinsic dimensions, so figures keep the asset's true aspect ratio */
+  width?: number;
+  height?: number;
 }
 
 export interface Project {
@@ -40,12 +43,11 @@ export const projects: Project[] = [
     tier: 'case-study'
   },
   {
-    id: 'attendance',
-    name: 'Attendance Hub.',
-    category: 'Full-Stack · Biometric · Live',
-    desc: 'Biometric attendance management system designed and built from scratch. Real-time dashboard, fingerprint and RFID registration.',
-    status: 'Live product',
-    image: '/1.png',
+    id: 'cash-management',
+    name: 'Enterprise Cash Management Platform.',
+    category: 'Fintech · Product Leadership · Banking',
+    desc: 'A cash-in-transit collections platform for a major Zambian bank. Roaming tellers process large cash deposits with instant credit value on collection.',
+    status: 'Live',
     tier: 'case-study'
   },
   {
@@ -54,7 +56,7 @@ export const projects: Project[] = [
     category: 'Enterprise UX · Data · Telecom',
     desc: 'High-stakes, data-heavy UX for analysts resolving telecom fraud cases. Case queue, severity scoring, and resolution.',
     status: 'Client Project',
-    image: '/projects/fraud.png',
+    image: '/projects/fraud/overlay-activity.png',
     tier: 'selected',
     background: 'Telecom fraud arrives in waves, not one case at a time. Around 150 cases flagged per day, each with its own risk signals and urgency. Before this redesign, analysts worked case-by-case with no severity ranking, so a low-risk duplicate charge could sit in the same queue as an active account takeover. The real problem wasn’t visibility, it was prioritization: which case to open first. I designed a triage system: auto-tagged intake, a severity model that surfaces the highest-risk cases first, and a structured resolution flow with case notes and an audit trail, plus keyboard shortcuts throughout, since analysts live in this screen for hours and every extra click is a delay.',
     outcome: 'Delivered a complete design system and high-fidelity mockups covering the case queue, severity scoring logic, and resolution workflow, ready for engineering handoff.',
@@ -68,8 +70,10 @@ export const projects: Project[] = [
     ],
     highlightStatement: 'A triage queue that surfaces the highest-risk of 150 daily fraud cases first, instead of making analysts hunt for them.',
     highlights: [
-      { src: '/projects/fraud.png', caption: 'Case queue with severity scoring.' },
-      { src: '/projects/fraud-net.png', caption: 'FraudNet, a self-built interactive demo of the monitoring concept.' },
+      { src: '/projects/fraud/dashboard.png', caption: 'Fraud detection dashboard: three-month trend, stat cards, and live alerts.', width: 6912, height: 4464 },
+      { src: '/projects/fraud/cases-filtering.png', caption: 'Active Cases queue: severity-ranked triage with status and fraud-type filters.', width: 6912, height: 4468 },
+      { src: '/projects/fraud/heatmap.png', caption: 'Geographic heatmap: fraud clusters across Accra, down to the neighborhood.', width: 6912, height: 4412 },
+      { src: '/projects/fraud/overlay-activity.png', caption: 'Daily case activity, surfaced on hover without leaving the trend view.', width: 6912, height: 4464 },
     ]
   },
   {
@@ -93,25 +97,6 @@ export const projects: Project[] = [
       { src: '/axis-hero.png', caption: 'Homepage hero.' },
       { src: '/3.png', caption: 'Portfolio spread.' },
       { src: '/4.png', caption: 'Project detail view.' },
-    ]
-  },
-  {
-    id: 'invoice',
-    name: 'Invoice Builder.',
-    category: 'Product Design · SaaS · Tool',
-    desc: 'Focused invoice generation tool. Every feature had to earn its place. Designed around the actual workflow.',
-    status: 'Side Project',
-    image: '/projects/invoice.png',
-    tier: 'selected',
-    role: 'Product Designer: SaaS, Workflow Design',
-    team: ['Solo project'],
-    overview: [
-      'Built alongside Axis Living to make running the business easier: invoicing without the overhead.',
-      'A focused invoice generation tool where every feature had to earn its place, designed around the actual workflow rather than a feature checklist.',
-    ],
-    highlightStatement: 'Invoicing designed around the actual workflow: every feature had to earn its place.',
-    highlights: [
-      { src: '/projects/invoice.png', caption: 'Invoice builder interface.' },
     ]
   },
   {
@@ -182,6 +167,6 @@ export function getOrderedProjects(): Project[] {
 
 export function getProjectHref(projectId: string): string {
   if (projectId === 'logit') return '/work/logit';
-  if (projectId === 'attendance') return '/work/attendance';
+  if (projectId === 'cash-management') return '/work/cash-management';
   return `/work/${projectId}`;
 }

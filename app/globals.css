@@ -508,6 +508,11 @@ section {
   pointer-events: none;
 }
 
+/* Text-only card: no bottom-bleeding thumbnail to close the card, so pad the bottom instead */
+.work-card--no-thumb {
+  padding-bottom: 36px;
+}
+
 .work-card__top {
   position: relative;
   z-index: 1;
@@ -1437,6 +1442,10 @@ strong {
     gap: 32px;
   }
 
+  .work-card--no-thumb {
+    padding-bottom: 24px;
+  }
+
   .work-card__name {
     font-size: 20px;
   }
@@ -1782,6 +1791,23 @@ strong {
 /* ── FIGURES (media + right-aligned numbered caption) ── */
 .dcs-figure {
   margin: 64px 0;
+}
+
+/* Two-up grid for portrait phone screens, so tall figures don't span the full column */
+.dcs-figure-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 32px;
+}
+
+.dcs-figure-grid .dcs-figure {
+  margin: 32px 0;
+}
+
+@media (max-width: 768px) {
+  .dcs-figure-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .dcs-figure__visual {
@@ -2277,6 +2303,10 @@ strong {
 
 .about-info__exp-block .about-info__body {
   font-size: 16px;
+}
+
+.about-info__exp-block .about-info__body + .about-info__body {
+  margin-top: 16px;
 }
 
 /* Writing grid, matching the reference's link-block grid */

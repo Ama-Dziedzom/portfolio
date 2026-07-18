@@ -53,6 +53,8 @@ export default function ProjectDetail({ project }: ProjectDetailProps) {
               type={media.type ?? "image"}
               src={media.src}
               alt={`${project.name} ${media.caption}`}
+              width={media.width}
+              height={media.height}
             />
           ))}
         </Highlights>

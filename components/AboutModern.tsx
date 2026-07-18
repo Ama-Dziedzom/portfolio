@@ -115,20 +115,38 @@ export default function AboutModern() {
         </motion.h2>
 
         <motion.div className="about-info__exp-row" {...fadeIn}>
-          <h3 className="about-info__exp-company">Creative agency, Accra</h3>
+          <h3 className="about-info__exp-company">Interactive Digital, Kanda, Ghana</h3>
           <div className="about-info__exp-block">
-            <div className="about-info__exp-role">Product Designer</div>
-            <div className="about-info__exp-date">Present</div>
+            <div className="about-info__exp-role">Senior Product Designer</div>
+            <div className="about-info__exp-date">Jun 2025 - Present</div>
             <p className="about-info__body">
-              Designing client products by day, building my own things after hours.
+              Own product delivery across 6+ enterprise and government projects:
+              writing PRDs, tracking roadmaps, translating business requirements
+              into technical specs, and aligning engineering on architecture and
+              flows across telecom, banking, and government clients.
             </p>
           </div>
         </motion.div>
 
-        <p className="dcs-placeholder">
-          [Placeholder] Room for earlier roles and dates once compiled: agency name,
-          previous positions, and timelines.
-        </p>
+        <motion.div className="about-info__exp-row" {...fadeIn}>
+          <h3 className="about-info__exp-company">Grey Parrot IO Ltd, Adenta, Ghana</h3>
+          <div className="about-info__exp-block">
+            <div className="about-info__exp-role">Head of Product</div>
+            <div className="about-info__exp-date">Sept 2022 - Jun 2025</div>
+            <p className="about-info__body">
+              Built the product design function from scratch as founding Head of
+              Product: hired and managed 2 designers and defined the roadmap across
+              the company&apos;s core B2B fintech suite.
+            </p>
+            <p className="about-info__body">
+              Led a major Zambian bank&apos;s Cash-in-Transit Collections Platform
+              end-to-end from concept through pilot to public launch: owning
+              requirements, running agile delivery with daily standups across a team
+              of 1 designer and 2 engineers (frontend and backend), and managing
+              stakeholder updates, risks, and blockers through release.
+            </p>
+          </div>
+        </motion.div>
       </div>
 
       {/* ── WRITING ── */}
